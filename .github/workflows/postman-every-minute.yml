@@ -1,1 +1,50 @@
+name: QA Market Status Check (Every Minute)
 
+on:
+  schedule:
+    - cron: '* * * * *'  # Runs every minute
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  postman-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman Collection
+        run: newman run collection.json
+```
+
+### 3. Commit the File
+
+- Scroll down
+- Add commit message: "Add GitHub Actions workflow for Postman collection"
+- Click **"Commit new file"**
+
+## How to Verify It's Working
+
+1. Go to the **"Actions"** tab in your repo
+2. You should see **"QA Market Status Check (Every Minute)"**
+3. Wait 1 minute, then refresh - you'll see a new run appear
+4. Click on any run to see the logs and test results
+
+## Final Folder Structure
+
+Your repo will look like this:
+```
+Collection/
+├── .gitignore
+├── Book1 open demat.xlsx
+├── Github basic.docx
+├── Playwright docs.docx
+├── api testing.xlsx
+├── collection.json              ✅ Your Postman collection
+├── openapi.json
+└── .github/
+    └── workflows/
+        └── postman-every-minute.yml  ✅ Your workflow file
