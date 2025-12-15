@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "a82e4e6b-f25a-4aff-b2f1-13f7ca293f65",
+		"name": "Atrad Market status check",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46092756",
+		"_collection_link": "https://dependrathapa.postman.co/workspace/DG~1468e35b-b9d1-46ec-81ad-01e49ed260f0/collection/46092756-a82e4e6b-f25a-4aff-b2f1-13f7ca293f65?action=share&source=collection_link&creator=46092756"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response data should be 'success'\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response.data).to.equal(\"success\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.5"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br, zstd"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "Origin",
+						"value": "https://uat.ssl.com.np"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Referer",
+						"value": "https://uat.ssl.com.np/atsweb/login?action=logout^&format=html"
+					},
+					{
+						"key": "Cookie",
+						"value": "theme=white; JSESSIONID=9SCp3mjoqiec_4e22V0KXFvR5Y0_dvUKlEraGeDW.ATRAD; username=HIMTEST; role=OnlineUser; broker_code=NEP; watchID=40252; is_dvp_enabled=true; max_basket_limit=100; _ga_PGTBNXDZXX=GS1.1.1734424521.12.1.1734425688.0.0.0; _ga=GA1.1.1913823256.1729743675; _ga_LXP31510HK=GS2.1.s1751955358$o279$g1$t1751963614$j60$l0$h0"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Priority",
+						"value": "u=0"
+					},
+					{
+						"key": "TE",
+						"value": "trailers"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "action",
+							"value": "login",
+							"type": "text"
+						},
+						{
+							"key": "format",
+							"value": "json",
+							"type": "text"
+						},
+						{
+							"key": "txtUserName",
+							"value": "HIMTEST",
+							"type": "text"
+						},
+						{
+							"key": "txtPassword",
+							"value": "2qD@6v",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/atsweb/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"atsweb",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://uat.ssl.com.np/atsweb/login' \\\n  -X POST \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.5' \\\n  -H 'Accept-Encoding: gzip, deflate, br, zstd' \\\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\n  -H 'X-Requested-With: XMLHttpRequest' \\\n  -H 'Origin: https://uat.ssl.com.np' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Referer: https://uat.ssl.com.np/atsweb/login?action=logout^&format=html' \\\n  -H 'Cookie: theme=white; JSESSIONID=9SCp3mjoqiec_4e22V0KXFvR5Y0_dvUKlEraGeDW.ATRAD; username=HIMTEST; role=OnlineUser; broker_code=NEP; watchID=40252; is_dvp_enabled=true; max_basket_limit=100; _ga_PGTBNXDZXX=GS1.1.1734424521.12.1.1734425688.0.0.0; _ga=GA1.1.1913823256.1729743675; _ga_LXP31510HK=GS2.1.s1751955358$o279$g1$t1751963614$j60$l0$h0' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'Priority: u=0' \\\n  -H 'TE: trailers' \\\n  --data-raw 'action=login^&format=json^&txtUserName=HIMTEST^&txtPassword=xcsds'"
+			},
+			"response": []
+		},
+		{
+			"name": "Market Status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Market Status - Post-response tests",
+							"",
+							"(function () {",
+							"  // Helper to parse JSON safely, handling single quotes in sample",
+							"  function safeParse(body) {",
+							"    try {",
+							"      return pm.response.json();",
+							"    } catch (e) {",
+							"      // Fallback: attempt to normalize single quotes to double quotes for JSON compatibility",
+							"      try {",
+							"        const normalized = body",
+							"          .replace(/'\\s*:\\s*'/g, '\":\"')",
+							"          .replace(/\"\\s*:\\s*'/g, '\":\"')",
+							"          .replace(/'\\s*:\\s*\"/g, '\":\"')",
+							"          .replace(/'\\s*}/g, '\"}')",
+							"          .replace(/{'/g, '{\"')",
+							"          .replace(/',\\s*'/g, '\",\"')",
+							"          .replace(/':/g, '\":')",
+							"          .replace(/,\\s*'status'\\s*:\\s*'/g, ', \"status\":\"')",
+							"          .replace(/'}\\s*}/g, '\"}}');",
+							"        return JSON.parse(normalized);",
+							"      } catch (e2) {",
+							"        throw new Error('Response body is not valid JSON. Raw body: ' + body);",
+							"      }",
+							"    }",
+							"  }",
+							"",
+							"  // 1) Status code is 200",
+							"  pm.test('Status code is 200', function () {",
+							"    pm.expect(pm.response.code, 'Expected HTTP status 200 but received ' + pm.response.code).to.eql(200);",
+							"  });",
+							"",
+							"  // 5) Response time under 1000 ms",
+							"  pm.test('Response time is under 1000 ms', function () {",
+							"    pm.expect(pm.response.responseTime, 'Expected response time < 1000 ms but was ' + pm.response.responseTime + ' ms').to.be.below(1000);",
+							"  });",
+							"",
+							"  const bodyText = pm.response.text();",
+							"  const json = safeParse(bodyText);",
+							"",
+							"  // 2) Assert response has top-level keys: code, description, data",
+							"  pm.test('Response has required top-level keys', function () {",
+							"    pm.expect(json, 'Response is not an object').to.be.an('object');",
+							"    const keys = Object.keys(json);",
+							"    ['code', 'description', 'data'].forEach(function (k) {",
+							"      pm.expect(keys.includes(k), 'Missing required key: ' + k).to.be.true;",
+							"    });",
+							"  });",
+							"",
+							"  // 3) Assert code == '0' and description == 'success'",
+							"  pm.test(\"code is '0' and description is 'success'\", function () {",
+							"    pm.expect(json.code, \"Expected code to be '0' but found: \" + JSON.stringify(json.code)).to.eql('0');",
+							"    pm.expect(json.description, \"Expected description to be 'success' but found: \" + JSON.stringify(json.description)).to.eql('success');",
+							"  });",
+							"",
+							"  // 4) data is an object and contains key 'status' with allowed values",
+							"  pm.test(\"data.status is one of ['Open','Close','Holiday','PreOpen']\", function () {",
+							"    pm.expect(json.data, 'Expected data to be an object but found: ' + (typeof json.data)).to.be.an('object');",
+							"    pm.expect(Object.prototype.hasOwnProperty.call(json.data, 'status'), \"Missing key 'status' in data\").to.be.true;",
+							"    const allowed = ['Open', 'Close', 'Holiday', 'PreOpen'];",
+							"    //  const allowed = ['Close', 'Holiday', 'PreOpen'];",
+							"    pm.expect(allowed, 'Internal test error: allowed list missing').to.be.an('array');",
+							"    pm.expect(allowed.includes(json.data.status), \"Invalid status '\" + json.data.status + \"'. Allowed: \" + allowed.join(', ')).to.be.true;",
+							"  });",
+							"",
+							"// Market time in Nepal",
+							"const openHour = 10;",
+							"const openMinute = 50;",
+							"const closeHour = 19;",
+							"",
+							"// Current UTC",
+							"const nowUTC = new Date();",
+							"",
+							"// Convert to Nepal Time (UTC+5:45)",
+							"const nepalTime = new Date(nowUTC.getTime() + (5*60 + 45)*60000);",
+							"",
+							"// Minutes since midnight",
+							"const currentMinutes = nepalTime.getHours() * 60 + nepalTime.getMinutes();",
+							"const openMinutes = openHour * 60 + openMinute;",
+							"const closeMinutes = closeHour * 60;",
+							"",
+							"// Determine expected status",
+							"let expectedStatus = '';",
+							"if (currentMinutes < openMinutes) {",
+							"    expectedStatus = 'PreOpen';",
+							"} else if (currentMinutes >= openMinutes && currentMinutes < closeMinutes) {",
+							"    expectedStatus = 'Open';",
+							"} else {",
+							"    expectedStatus = 'Close';",
+							"}",
+							"",
+							"console.log(\"Nepal Time:\", nepalTime.toTimeString().split(' ')[0]);",
+							"console.log(\"Expected Status:\", expectedStatus);",
+							"console.log(\"API Returned:\", json.data.status);",
+							"",
+							"// Only check status if API returned a valid value",
+							"const allowed = ['PreOpen','Open','Close','Holiday'];",
+							"if (allowed.includes(json.data.status)) {",
+							"    pm.test(\"Market status matches expected time-based status\", function () {",
+							"        pm.expect(json.data.status).to.eql(expectedStatus);",
+							"    });",
+							"} else {",
+							"    console.log(\"⚠️ API returned unexpected status:\", json.data.status);",
+							"}",
+							"",
+							"",
+							"",
+							"})();"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.5"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br, zstd"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Referer",
+						"value": "https://uat.ssl.com.np/atsweb/home?action=showHome&format=html&reqid=1764482649155"
+					},
+					{
+						"key": "Cookie",
+						"value": "theme=white; JSESSIONID=mWoTIgBDB7cMDklFWBo7UrrcUpyRyrkZrZHZn_tn.ATRAD; username=; role=OnlineUser; broker_code=NEP; watchID=40252; is_dvp_enabled=true; max_basket_limit=100; _ga_PGTBNXDZXX=GS1.1.1734424521.12.1.1734425688.0.0.0; _ga=GA1.1.1913823256.1729743675; _ga_LXP31510HK=GS2.1.s1764480898$o525$g1$t1764482650$j60$l0$h0; _ga_36L5DWVBMF=GS2.1.s1762143148$o20$g1$t1762144621$j33$l0$h0; _ga=GA1.1.1913823256.1729743675",
+						"disabled": true
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "TE",
+						"value": "trailers"
+					}
+				],
+				"url": {
+					"raw": "https://uat.ssl.com.np/atsweb/home?action=marketStatus",
+					"protocol": "https",
+					"host": [
+						"uat",
+						"ssl",
+						"com",
+						"np"
+					],
+					"path": [
+						"atsweb",
+						"home"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "marketStatus"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl 'https://uat.ssl.com.np/atsweb/home?action=marketStatus&dojo.preventCache=1764482777702' \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.5' \\\n  -H 'Accept-Encoding: gzip, deflate, br, zstd' \\\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\n  -H 'X-Requested-With: XMLHttpRequest' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Referer: https://uat.ssl.com.np/atsweb/home?action=showHome&format=html&reqid=1764482649155' \\\n  -H 'Cookie: theme=white; JSESSIONID=mWoTIgBDB7cMDklFWBo7UrrcUpyRyrkZrZHZn_tn.ATRAD; username=; role=OnlineUser; broker_code=NEP; watchID=40252; is_dvp_enabled=true; max_basket_limit=100; _ga_PGTBNXDZXX=GS1.1.1734424521.12.1.1734425688.0.0.0; _ga=GA1.1.1913823256.1729743675; _ga_LXP31510HK=GS2.1.s1764480898$o525$g1$t1764482650$j60$l0$h0; _ga_36L5DWVBMF=GS2.1.s1762143148$o20$g1$t1762144621$j33$l0$h0; _ga=GA1.1.1913823256.1729743675' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'TE: trailers'"
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.5"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip, deflate, br, zstd"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Referer",
+								"value": "https://uat.ssl.com.np/atsweb/home?action=showHome&format=html&reqid=1764482649155"
+							},
+							{
+								"key": "Cookie",
+								"value": "theme=white; JSESSIONID=mWoTIgBDB7cMDklFWBo7UrrcUpyRyrkZrZHZn_tn.ATRAD; username=; role=OnlineUser; broker_code=NEP; watchID=40252; is_dvp_enabled=true; max_basket_limit=100; _ga_PGTBNXDZXX=GS1.1.1734424521.12.1.1734425688.0.0.0; _ga=GA1.1.1913823256.1729743675; _ga_LXP31510HK=GS2.1.s1764480898$o525$g1$t1764482650$j60$l0$h0; _ga_36L5DWVBMF=GS2.1.s1762143148$o20$g1$t1762144621$j33$l0$h0; _ga=GA1.1.1913823256.1729743675",
+								"disabled": true
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "TE",
+								"value": "trailers"
+							}
+						],
+						"url": {
+							"raw": "https://uat.ssl.com.np/atsweb/home?action=marketStatus",
+							"protocol": "https",
+							"host": [
+								"uat",
+								"ssl",
+								"com",
+								"np"
+							],
+							"path": [
+								"atsweb",
+								"home"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "marketStatus"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 06:27:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "\r\n{\"code\":\"0\",\"description\":\"success\",\"data\":{'status':'Open'}}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://uat.ssl.com.np",
+			"type": "default"
+		}
+	]
+}

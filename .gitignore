@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Allow gitignore itself
+!.gitignore
+
+# Allow Postman collection
+!Atrad Market status check.postman_collection.json
